@@ -1,0 +1,259 @@
+body {
+    background-color: #fffaf0;
+}
+
+.animal-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.animal-list .animal-card {
+    width: 250px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.animal-list .animal-card:hover {
+    transform: translateY(-5px);
+}
+
+.animal-list img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+header {
+    background: #7BC96F;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.1;
+    text-decoration: none;
+}
+
+.logo-main {
+    font-family: "Dela Gothic One", "Yu Gothic", sans-serif;
+    font-size: 1.5rem;
+    color: #FFF8E7;
+    -webkit-text-stroke: 1px #3E7A34;
+    text-stroke: 1px #3E7A34;
+    paint-order: stroke fill;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+    letter-spacing: 0.02em;
+    word-break: keep-all;
+}
+
+.logo-sub {
+    margin-top: 2px;
+    font-family: 'Darumadrop One', "Kiwi Maru", "Yu Gothic", sans-serif;
+    font-size: 1.1rem;
+    color: #FFCB2E;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.05em;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* カテゴリきりかえボタン */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 auto 24px;
+    padding: 0 16px;
+}
+
+.category-tabs button {
+    font-family: inherit;
+    font-size: 1.05rem;
+    padding: 10px 22px;
+    border: 2px solid currentColor;
+    border-radius: 999px;
+    background: #fff;
+    cursor: pointer;
+    transition: .2s;
+    line-height: 1.4;
+}
+
+.category-tabs button .tab-label {
+    font-weight: 700;
+}
+
+.category-tabs button .tab-sub {
+    font-size: .8rem;
+    display: block;
+}
+
+.category-tabs button[data-cat="CR"] {
+    color: #c0392b;
+}
+
+.category-tabs button[data-cat="EN"] {
+    color: #d68910;
+}
+
+.category-tabs button[data-cat="VU"] {
+    color: #2e86c1;
+}
+
+.category-tabs button:hover {
+    opacity: .75;
+}
+
+.category-tabs button.is-active {
+    background: currentColor;
+}
+
+.category-tabs button.is-active .tab-label,
+.category-tabs button.is-active .tab-sub {
+    color: #fff;
+}
+
+.category-heading {
+    text-align: center;
+}
+
+
+footer {
+    background: #7BC96F;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+    color: #7BC96F;
+    font-family: "Kiwi Maru", "Dela Gothic One", "Yu Gothic", sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 20px;
+    color: #7BC96F;
+    font-family: "Kiwi Maru", "Dela Gothic One", "Yu Gothic", sans-serif;
+}
+
+.VU {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.VU div {
+    width: 250px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.VU div:hover {
+    transform: translateY(-5px);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.back-link-wrap {
+    padding: 24px 10% 0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.animal-card {
+    margin-bottom: 40px;
+}
+
+/* ============================================================
+   スマホ対応
+   ============================================================ */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 18px;
+    }
+
+    .back-link-wrap {
+        padding: 20px 20px 0;
+    }
+
+    .category-heading {
+        font-size: 22px;
+        padding: 0 16px;
+    }
+
+    .category-tabs button {
+        font-size: 0.95rem;
+        padding: 9px 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .animal-list {
+        gap: 18px;
+    }
+
+    /* カードを画面幅に合わせてのばし、はみ出さないようにする */
+    .animal-list .animal-card,
+    .VU div {
+        width: 100%;
+        max-width: 320px;
+        margin-bottom: 24px;
+    }
+
+    .animal-list img {
+        height: 190px;
+    }
+}

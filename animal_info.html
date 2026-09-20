@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title id="pageTitle">どうぶつしょうかい | まもろう！どうぶつたち in はまZOO</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Darumadrop+One&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="animal_info.css">
+<link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+<header>
+
+<a class="logo" href="index.html">
+<span class="logo-main"><span>まもろう！</span><span>どうぶつたち</span></span>
+<span class="logo-sub">in はまZOO</span>
+</a>
+
+<nav id="siteNav">
+<ul>
+<li><a href="index.html#map">どうぶつえんマップ</a></li>
+<li><a href="index.html#endanger_animals">ぜつめつきぐしゅ</a></li>
+<li><a href="index.html#animals">どうぶつしょうかい</a></li>
+<li><a href="index.html#events">イベント</a></li>
+</ul>
+</nav>
+
+<button class="nav-toggle" id="navToggle" type="button" aria-label="メニューをひらく" aria-expanded="false" aria-controls="siteNav">
+<span></span><span></span><span></span>
+</button>
+
+</header>
+
+<div class="back-link-wrap">
+<a href="#" onclick="history.back();" class="back-link">← もどる</a>
+</div>
+
+<main>
+<div id="animalRoot"></div>
+</main>
+
+<script src="animals-data.js"></script>
+<script>
+
+function getAnimalNameFromURL(){
+  const params = new URLSearchParams(window.location.search);
+  return params.get("name");
+}
+
+function findAnimal(name){
+  return ANIMALS_DATA.find(a => a.name === name);
+}
+
+function renderNotFound(root, name){
+  root.innerHTML = `
+    <div class="not-found">
+      <h1>どうぶつが見つかりませんでした</h1>
+      <p>「${name ?? ""}」という名前のページは準備中か、見つかりませんでした。</p>
+      <p style="margin-top:14px;"><a href="index.html">← トップページへもどる</a></p>
+    </div>
+  `;
+}
+
+function renderAnimal(root, animal){
+  document.getElementById("pageTitle").textContent =
+    `${animal.name} | まもろう！どうぶつたち in はまZOO`;
+
+  const photoHTML = (animal.image && animal.image !== "placeholder")
+    ? `<div class="animal-photo"><img src="${animal.image}" alt="${animal.name}"></div>`
+    : `<div class="animal-photo is-placeholder">
+         <div class="paw">🐾</div>
+         <div>ここに写真が入ります</div>
+       </div>`;
+
+  const descPlaceholder = !animal.description || animal.description.includes("ここに解説文が入ります");
+  const descClass = descPlaceholder ? "animal-desc-text is-placeholder" : "animal-desc-text";
+
+  root.innerHTML = `
+    <div class="animal-detail">
+      ${photoHTML}
+      <div>
+        <h1 class="animal-name">${animal.name}</h1>
+        <div class="animal-desc-card">
+          <div class="animal-desc-label">すみか</div>
+          <p class="${descClass}">${animal.area ?? "エリア情報（仮）"}</p>
+        </div>
+        <div class="animal-desc-card">
+          <div class="animal-desc-label">かいせつ</div>
+          <p class="${descClass}">${animal.description ?? ""}</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+(function init(){
+  const root = document.getElementById("animalRoot");
+  const name = getAnimalNameFromURL();
+  const animal = name ? findAnimal(name) : null;
+
+  if (animal){
+    renderAnimal(root, animal);
+  } else {
+    renderNotFound(root, name);
+  }
+})();
+
+</script>
+
+<footer>
+© 2026 グループ8
+</footer>
+
+<script src="responsive.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Yusei+Magic&family=Darumadrop+One&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="endanger_animal_info.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title id="pageTitle">どうぶつしょうかい | まもろう！どうぶつたち in はまZOO</title>
+</head>
+
+<body>
+
+<header>
+
+    <a class="logo" href="index.html">
+        <span class="logo-main"><span>まもろう！</span><span>どうぶつたち</span></span>
+        <span class="logo-sub">in はまZOO</span>
+    </a>
+
+    <nav id="siteNav">
+        <ul>
+            <li><a href="index.html#map">どうぶつえんマップ</a></li>
+            <li><a href="index.html#endanger_animals">ぜつめつきぐしゅ</a></li>
+            <li><a href="index.html#animals">どうぶつしょうかい</a></li>
+            <li><a href="index.html#events">イベント</a></li>
+        </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="メニューをひらく" aria-expanded="false" aria-controls="siteNav">
+    <span></span><span></span><span></span>
+    </button>
+
+</header>
+
+<div class="back-link-wrap">
+    <a href="endanger_animals.html" class="back-link" id="backLink">← ENのどうぶついちらん</a>
+</div>
+
+<div id="animalRoot"></div>
+
+<script src="EN.js"></script>
+<script src="CR.js"></script>
+<script src="VU.js"></script>
+<script>
+
+function getAnimalNameFromURL(){
+  const params = new URLSearchParams(window.location.search);
+  return params.get("name");
+}
+
+function findAnimal(name){
+  // EN → CR → VU の順に探す。
+  // どの一覧に属するかで、戻るリンク先を切り替える。
+  const en = (typeof ANIMALS_DATA !== "undefined") ? ANIMALS_DATA : [];
+  const cr = (typeof CR_ANIMALS_DATA !== "undefined") ? CR_ANIMALS_DATA : [];
+  const vu = (typeof VU_ANIMALS_DATA !== "undefined") ? VU_ANIMALS_DATA : [];
+
+  const enHit = en.find(a => a.name === name);
+  if (enHit) return { animal: enHit, category: "EN" };
+
+  const crHit = cr.find(a => a.name === name);
+  if (crHit) return { animal: crHit, category: "CR" };
+
+  const vuHit = vu.find(a => a.name === name);
+  if (vuHit) return { animal: vuHit, category: "VU" };
+
+  return null;
+}
+
+function renderNotFound(root, name){
+  root.innerHTML = `
+    <div class="not-found">
+      <h1>どうぶつが見つかりませんでした</h1>
+      <p>「${name ?? ""}」という名前のページは準備中か、見つかりませんでした。</p>
+      <p style="margin-top:14px;"><a href="index.html">← トップページへもどる</a></p>
+    </div>
+  `;
+}
+
+function updateBackLink(category){
+  const back = document.getElementById("backLink");
+  if (!back) return;
+
+  // カテゴリごとの戻り先。動物区分をふやすときはここに1行足す。
+  const BACK_LINKS = {
+    EN: { href: "endanger_animals.html", text: "← ENのどうぶついちらん" },
+    CR: { href: "endanger_animals.html", text: "← CRのどうぶついちらん" },
+    VU: { href: "endanger_animals.html", text: "← VUのどうぶついちらん" },
+  };
+
+  const link = BACK_LINKS[category] || BACK_LINKS.EN;
+  back.href = link.href;
+  back.textContent = link.text;
+}
+
+function renderAnimal(root, animal, category){
+  updateBackLink(category);
+
+  document.getElementById("pageTitle").textContent =
+    `${animal.name} | まもろう！どうぶつたち in はまZOO`;
+
+  const photoHTML = (animal.image && animal.image !== "placeholder")
+    ? `<img src="${animal.image}" alt="${animal.name}">`
+    : `<img src="" alt="ここに写真が入ります">`;
+
+  root.innerHTML = `
+    <h1>${animal.name}</h1>
+
+    <div class="animal-detail">
+
+      ${photoHTML}
+
+      <div class="info">
+        <h2>せいたい</h2>
+        <p>${animal.description ?? ""}</p>
+
+        <h2>せいそくち</h2>
+        <p>${animal.area ?? "エリア情報（仮）"}</p>
+
+        <h2>すきなたべもの</h2>
+        <p>${animal.diet ?? ""}</p>
+
+        <h2>すくなくなっているりゆう</h2>
+        <p>${animal.reason ?? ""}</p>
+
+      </div>
+
+    </div>
+  `;
+}
+
+(function init(){
+  const root = document.getElementById("animalRoot");
+  const name = getAnimalNameFromURL();
+  const result = name ? findAnimal(name) : null;
+
+  if (result){
+    renderAnimal(root, result.animal, result.category);
+  } else {
+    renderNotFound(root, name);
+  }
+})();
+
+</script>
+
+<footer>
+© 2026 グループ8
+</footer>
+
+<script src="responsive.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Yusei+Magic&family=Darumadrop+One&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="endanger_animals.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>ぜつめつきぐしゅ一覧 | まもろう！どうぶつたち in はまZOO</title>
+</head>
+
+<body>
+<header>
+
+    <a class="logo" href="index.html">
+        <span class="logo-main"><span>まもろう！</span><span>どうぶつたち</span></span>
+        <span class="logo-sub">in はまZOO</span>
+    </a>
+
+    <nav id="siteNav">
+        <ul>
+            <li><a href="index.html#map">どうぶつえんマップ</a></li>
+            <li><a href="index.html#endanger_animals">ぜつめつきぐしゅ</a></li>
+            <li><a href="index.html#animals">どうぶつしょうかい</a></li>
+            <li><a href="index.html#events">イベント</a></li>
+        </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="メニューをひらく" aria-expanded="false" aria-controls="siteNav">
+    <span></span><span></span><span></span>
+    </button>
+
+</header>
+
+<div class="back-link-wrap">
+    <a href="index.html#animals" class="back-link" id="backLink">← もどる</a>
+</div>
+
+<div class="category-tabs" id="categoryTabs"></div>
+
+<h1 class="category-heading" id="categoryHeading"></h1>
+
+<div class="animal-list" id="animalList"></div>
+
+<!-- データファイルは今までどおり3つのまま -->
+<script src="CR.js"></script>
+<script src="EN.js"></script>
+<script src="VU.js"></script>
+
+<script>
+// 一覧では name と image だけを表示する。
+// 「ぜつめつのりゆう(reason)」など、その他の情報は
+// 詳細ページ(endanger_animals_info.html)で表示する。
+(function () {
+    // 3つのデータファイルの配列をここでまとめる
+    const CATEGORIES = [
+        { id: "CR", title: "しんこくなききにあるどうぶつたち", data: CR_ANIMALS_DATA },
+        { id: "EN", title: "ぜつめつのききにあるどうぶつたち", data: ANIMALS_DATA },
+        { id: "VU", title: "きぐしゅにあたるどうぶつたち",   data: VU_ANIMALS_DATA },
+    ];
+
+    const tabs = document.getElementById("categoryTabs");
+    const heading = document.getElementById("categoryHeading");
+    const list = document.getElementById("animalList");
+
+    // URLの ?category=CR などをよみとる（なければ CR）
+    const params = new URLSearchParams(location.search);
+    let current = (params.get("category") || "CR").toUpperCase();
+    if (!CATEGORIES.some(function (c) { return c.id === current; })) {
+        current = CATEGORIES[0].id;
+    }
+
+    // きりかえボタンをつくる
+    tabs.innerHTML = CATEGORIES.map(function (c) {
+        return '<button type="button" data-cat="' + c.id + '">' +
+               '<span class="tab-label">' + c.id + '</span>' +
+               '<span class="tab-sub">' + c.title + '</span>' +
+               '</button>';
+    }).join("");
+
+    function render(catId) {
+        current = catId;
+
+        const cat = CATEGORIES.filter(function (c) { return c.id === catId; })[0];
+        heading.textContent = cat.id + ": " + cat.title;
+
+        Array.prototype.forEach.call(tabs.children, function (btn) {
+            btn.classList.toggle("is-active", btn.dataset.cat === catId);
+        });
+
+        list.innerHTML = cat.data.map(function (animal) {
+            return `
+            <div class="animal-card">
+                <a href="endanger_animals_info.html?name=${encodeURIComponent(animal.name)}">
+                    <img src="${animal.image}" alt="${animal.name}">
+                    <h2>${animal.name}</h2>
+                </a>
+            </div>
+        `;
+        }).join("");
+
+        // ページをかさねずに、URLだけ書きかえる
+        history.replaceState(null, "", "?category=" + catId);
+    }
+
+    tabs.addEventListener("click", function (e) {
+        const btn = e.target.closest("button[data-cat]");
+        if (btn) render(btn.dataset.cat);
+    });
+
+    render(current);
+})();
+</script>
+
+<footer>
+© 2026 グループ8
+</footer>
+
+<script src="responsive.js"></script>
+
+</body>
+</html>

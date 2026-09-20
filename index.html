@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>まもろう！どうぶつたち in はまZOO</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Yusei+Magic&family=Darumadrop+One&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="responsive.css">
+
+</head>
+
+<body>
+
+<!-- ヘッダー -->
+
+<header>
+
+<a class="logo" href="index.html">
+<span class="logo-main"><span>まもろう！</span><span>どうぶつたち</span></span>
+<span class="logo-sub">in はまZOO</span>
+</a>
+
+<nav id="siteNav">
+
+<ul>
+
+<li><a href="#map">どうぶつえんマップ</a></li>
+
+<li><a href="#endanger_animals">ぜつめつきぐしゅ</a></li>
+
+<li><a href="#animals">どうぶつしょうかい</a></li>
+
+<li><a href="#events">イベント</a></li>
+
+
+</ul>
+
+</nav>
+
+<button class="nav-toggle" id="navToggle" type="button" aria-label="メニューをひらく" aria-expanded="false" aria-controls="siteNav">
+<span></span><span></span><span></span>
+</button>
+
+</header>
+
+
+<!-- トップ -->
+
+<section class="hero">
+
+<h1 class="hero-phrase" aria-label="きみがいるみらいをずっと">
+<span class="char">き</span><span class="char">み</span><span class="char">が</span><span class="char">い</span><span class="char">る</span><span class="char">み</span><span class="char">ら</span><span class="char">い</span><span class="char">を</span><span class="char">ず</span><span class="char">っ</span><span class="char">と</span>
+</h1>
+
+<div class="hero-content">
+
+<p class="hero-sub">
+あいにいこう！まなぼう！<wbr>はままつしどうぶつえん！
+</p>
+
+<a href="#about" class="btn">
+
+🐾 どうぶつにあいにいく
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- 園内マップ -->
+
+<section id="map">
+
+<h2>マップ</h2>
+
+<div class="map-box">
+<div class="map-wrapper" id="mapWrapper">
+   <img
+   src="picture/map_202602.jpg"
+   id="mapImg"
+   alt="園内マップ">
+   <svg class="map-overlay" id="overlay" viewBox="0 0 1754 1240" preserveAspectRatio="xMidYMid meet"></svg>
+</div>
+<p>
+
+どうぶつをさがしにいこう！！
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- 絶滅危惧種 -->
+
+<section id="endanger_animals">
+
+<h2>ぜつめつのきけんがあるどうぶつ</h2>
+
+
+
+<div class="card-container">
+
+<a href="endanger_animals.html?category=CR" class="card">
+<img src="picture/スマトラオランウータン.jpg">
+<div class="card-content">
+<h3>とってもすくない（CR）</h3>
+<p>スマトラオランウータンたち</p>
+</div>
+</a>
+
+<a href="endanger_animals.html?category=EN" class="card">
+<img src="picture/アムールトラ.jpg">
+<div class="card-content">
+<h3>すくない（EN）</h3>
+<p>アムールトラたち</p>
+</div>
+</a>
+
+<a href="endanger_animals.html?category=VU" class="card">
+<img src="picture/フンボルトペンギン.jpg">
+<div class="card-content">
+<h3>すくなくなっている（VU）</h3>
+<p>フンボルトペンギンたち</p>
+</div>
+</a>
+
+</div>
+
+    <div class="guide-character">
+    <img src="picture/シロフクロウ.jpg" alt="シロフクロウ">
+    <div class="guide-bubble">
+    <div class="guide-name">かいせつシロフクロウ</div>
+    <p>
+            ぼくはここで
+            <ruby>案内役<rt>あんないやく</rt></ruby>
+            をしているシロフクロウだよ！
+    </p>
+    <p>
+            このコーナーにいる
+            <ruby>動物<rt>どうぶつ</rt></ruby>
+            たちは、「
+            <ruby>絶滅<rt>ぜつめつ</rt></ruby>
+            してしまうかもしれない
+            <ruby>動物<rt>どうぶつ</rt></ruby>
+            」なんだ。
+            <ruby>危険<rt>きけん</rt></ruby>
+            の
+            <ruby>大<rt>おお</rt></ruby>
+            きさによって、こんなふうに
+            <ruby>分<rt>わ</rt></ruby>
+            けられるよ。
+    </p>
+    <p>
+            <span class="rank-tag cr">CR</span>
+            は「
+            <ruby>深刻<rt>しんこく</rt></ruby>
+            な
+            <ruby>絶滅<rt>ぜつめつ</rt></ruby>
+            の
+            <ruby>危険<rt>きけん</rt></ruby>
+            」、
+
+            <span class="rank-tag en">EN</span>
+            は「
+            <ruby>絶滅<rt>ぜつめつ</rt></ruby>
+            の
+            <ruby>危機<rt>きき</rt></ruby>
+            」、
+
+            <span class="rank-tag vu">VU</span>
+            は「
+            <ruby>急<rt>いそ</rt></ruby>
+            いで
+            <ruby>対策<rt>たいさく</rt></ruby>
+            しないといけない」
+            っていう
+            <ruby>意味<rt>いみ</rt></ruby>
+            なんだ。    
+    </p>
+
+        <p>
+            CRがいちばん
+            <ruby>危険<rt>きけん</rt></ruby>
+            で、EN、VUの
+            <ruby>順番<rt>じゅんばん</rt></ruby>
+            で、少しずつ
+            <ruby>危険度<rt>きけんど</rt></ruby>
+            が
+            <ruby>低<rt>ひく</rt></ruby>
+            くなっていくよ。
+        </p>
+
+        <p>
+            どうやったらこの
+            <ruby>動物<rt>どうぶつ</rt></ruby>
+            たちを
+            <ruby>守<rt>まも</rt></ruby>
+            れるか、いっしょに
+            <ruby>考<rt>かんが</rt></ruby>
+            えてみよう！
+        </p>
+    </div>
+</div>
+
+</section>
+
+
+<!-- 展示動物紹介 -->
+
+<section id="animals">
+
+<h2>どうぶつえんでみれるどうぶつ</h2>
+
+<div class="animal-pager">
+
+<button class="pager-btn" id="animalPrevBtn" aria-label="前のどうぶつ">&#10094;</button>
+
+<div class="pager-track-wrap">
+<div class="pager-track" id="animalTrack"></div>
+</div>
+
+<button class="pager-btn" id="animalNextBtn" aria-label="次のどうぶつ">&#10095;</button>
+
+</div>
+
+<div class="pager-dots" id="animalDots"></div>
+
+
+<div class="about">
+
+<h3><ruby>浜松市動物園<rt>はままつしどうぶつえん</rt></ruby>についての<ruby>基本情報<rt>きほんじょうほう</rt></ruby></h3>
+
+<p>
+📍<ruby>住所<rt>じゅうしょ</rt></ruby>：<ruby>静岡県浜松市中央区舘山寺町<rt>しずおかけん はままつし ちゅうおうく かんざんじちょう</rt></ruby>199
+</p>
+
+<p>
+🕒<ruby>営業時間<rt>えいぎょうじかん</rt></ruby>：9:00〜16:30
+</p>
+
+<p>
+🎫<ruby>大人<rt>おとな</rt></ruby>500<ruby>円<rt>えん</rt></ruby><br>
+
+<ruby>中学生以下<rt>ちゅうがくせいいか</rt></ruby><ruby>無料<rt>むりょう</rt></ruby><br>
+
+70<ruby>歳以上<rt>さいいじょう</rt></ruby><ruby>無料<rt>むりょう</rt></ruby>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- イベント -->
+
+<section id="events">
+
+<h2>イベント</h2>
+
+<div class="calendar">
+
+<table>
+
+<tr>
+
+<th>ひづけ</th>
+
+<th>イベント</th>
+
+</tr>
+
+<tbody id="eventTableBody">
+
+<tr>
+
+<td>6/21</td>
+
+<td>せかいキリンの<ruby>日<rt>ひ</rt></ruby></td>
+
+</tr>
+
+<tr>
+
+<td>6/28</td>
+
+<td>ミーアキャットガイド</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 グループ8
+
+</footer>
+
+<div id="popup">
+  <div class="popup-card" id="popupCard"></div>
+</div>
+
+<script>
+  // =======================================
+  // エリア定義: cx, cy, r, [動物名リスト]
+  // =======================================
+
+  const areas = [
+    [575, 586, 43, ["ヒメコンドル", "アンデスコンドル", "オジロワシ", "ハクトウワシ", "オオワシ"]],
+    [699, 699, 44, ["ニホンザル"]],
+    [581, 679, 46, ["ルリコンゴウインコ", "ジュズカケバト", "クジャクバト"]],
+    [779, 550, 37, ["マナヅル"]],
+    [842, 566, 24, ["カピバラ"]],
+    [379, 701, 20, ["ロバ"]],
+    [325, 741, 24, ["クロカンガルー", "オオカンガルー"]],
+    [411, 778, 27, ["ヤギ", "ヒツジ"]],
+    [361, 837, 30, ["ウマ（ミニチュアホース）"]],
+    [379, 923, 24, ["ウマ（ポニー）"]],
+    [498, 828, 19, ["モルモット", "チンチラ", "ヨツユビハリネズミ"]],
+    [545, 830, 18, ["カイウサギ"]],
+    [860, 663, 37, ["アムールトラ"]],
+    [946, 677, 35, ["ライオン"]],
+    [1049, 537, 34, ["ヒョウ（クロヒョウ）"]],
+    [994, 530, 21, ["リカオン"]],
+    [1025, 383, 32, ["ベニイロフラミンゴ", "チリーフラミンゴ", "マガン", "マガモ", "カルガモ", "ツクシガモ", "オシドリ", "シナガチョウ", "アヒル", "カナダガン", "ヒドリガモ", "ホシハジロ"]],
+    [899, 365, 22, ["アメリカビーバー"]],
+    [946, 325, 31, ["フンボルトペンギン"]],
+    [856, 264, 34, ["ホッキョクグマ"]],
+    [944, 245, 30, ["フンボルトペンギン"]],
+    [1084, 271, 23, ["ヒグマ"]],
+    [1133, 342, 40, ["ツキノワグマ"]],
+    [1161, 453, 41, ["パラワンコクジャク", "マクジャク", "インドクジャク"]],
+    [1178, 562, 24, ["レッサーパンダ"]],
+    [1220, 522, 30, ["アフリカタテガミヤマアラシ", "カナダヤマアラシ"]],
+    [1298, 380, 23, ["ホンシュウジカ"]],
+    [1288, 452, 34, ["コモンマーモセット", "クロミミマーモセット", "アカテタマリン", "ワタボウシタマリン", "ゴールデンライオンタマリン", "ヒゲサキ"]],
+    [1446, 410, 31, ["アメリカバイソン"]],
+    [1528, 386, 25, ["ショウジョウトキ", "シロトキ", "アフリカクロトキ"]],
+    [1351, 610, 29, ["ニシゴリラ"]],
+    [1325, 530, 37, ["レッサーパンダ", "コツメカワウソ", "ミーアキャット"]],
+    [1240, 594, 28, ["ミーアキャット"]],
+    [1296, 580, 23, ["コツメカワウソ"]],
+    [1312, 703, 34, ["チンパンジー"]],
+    [1334, 662, 31, ["スマトラオランウータン"]],
+    [1265, 658, 26, ["メンフクロウ", "シロフクロウ", "ワシミミズク"]],
+    [1299, 854, 33, ["ワオキツネザル", "クロキツネザル", "コモンリスザル", "フサオマキザル", "ジェフロイクモザル", "ブラウンケナガクモザル"]],
+    [1441, 791, 42, ["クロザル", "シシオザル", "ドグエラヒヒ", "マンドリル", "アビシニアコロブス", "フランソワルトン", "アジルテナガザル"]],
+    [1581, 552, 40, ["シマウマ"]],
+    [1637, 484, 30, ["ダチョウ"]],
+    [1546, 459, 42, ["キリン"]],
+  ];
+
+  // =======================================
+  // SVGサークル生成
+  // =======================================
+  const svg = document.getElementById('overlay');
+  const popup = document.getElementById('popup');
+  const popupCard = document.getElementById('popupCard');
+  let activeCircle = null;
+  let hideTimer = null;
+
+  // 動物名 → URLスラグ変換（日本語をそのままパスに使用）
+  function toSlug(name) {
+    return encodeURIComponent(name);
+  }
+
+  function buildPopupHTML(areaData) {
+    const [cx, cy, r, animals] = areaData;
+
+    const animalItems = animals.map(name => {
+      const url = `animal_info.html?name=${toSlug(name)}`;
+      return `<a class="animal-link" href="${url}">${name}</a>`;
+    }).join('');
+
+    return `<div class="popup-animals">${animalItems}</div>`;
+  }
+
+  function showPopup(e, areaData, circle) {
+    clearTimeout(hideTimer);
+
+    popupCard.innerHTML = buildPopupHTML(areaData);
+    popup.classList.add('visible');
+
+    if (activeCircle && activeCircle !== circle) {
+      activeCircle.classList.remove('active');
+    }
+    circle.classList.add('active');
+    activeCircle = circle;
+
+    // DOMレンダリング後に実サイズで位置計算
+    requestAnimationFrame(() => positionPopup(e));
+  }
+
+  function positionPopup(e) {
+    const card = popupCard;
+    const cardW = card.offsetWidth || 200;
+    const cardH = card.offsetHeight || 120;
+    const offset = 12;
+    const margin = 8;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    // まずカーソル右下に置く
+    let x = e.clientX + offset;
+    let y = e.clientY + offset;
+
+    // 右端にはみ出す → 左側に
+    if (x + cardW > vw - margin) x = e.clientX - cardW - offset;
+    // 下端にはみ出す → 上側に
+    if (y + cardH > vh - margin) y = e.clientY - cardH - offset;
+    // 上端補正
+    if (y < margin) y = margin;
+    // 左端補正
+    if (x < margin) x = margin;
+
+    popup.style.left = x + 'px';
+    popup.style.top = y + 'px';
+  }
+
+  function hidePopup() {
+    hideTimer = setTimeout(() => {
+      popup.classList.remove('visible');
+      if (activeCircle) {
+        activeCircle.classList.remove('active');
+        activeCircle = null;
+      }
+    }, 200);
+  }
+
+  // ポップアップ自体にカーソルが乗っている間は消えない
+  popup.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+  popup.addEventListener('mouseleave', hidePopup);
+
+  // =======================================
+  // サークル生成
+  // =======================================
+  areas.forEach((areaData) => {
+    const [cx, cy, r] = areaData;
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute("cx", cx);
+    circle.setAttribute("cy", cy);
+    circle.setAttribute("r", r);
+
+    // --- マウス（PC）用：ホバーで表示 ---
+    circle.addEventListener("mouseenter", (e) => showPopup(e, areaData, circle));
+    circle.addEventListener("mouseleave", () => {
+      hideTimer = setTimeout(() => {
+        if (!popup.matches(':hover')) hidePopup();
+      }, 100);
+    });
+
+    // --- タッチ（スマホ・タブレット）用：タップで表示／もう一度タップで閉じる ---
+    circle.addEventListener("touchstart", (e) => {
+      // 疑似マウスイベント（mouseenter等）が二重で走らないように抑制
+      e.preventDefault();
+      const t = e.touches[0];
+      clearTimeout(hideTimer);
+
+      if (activeCircle === circle && popup.classList.contains('visible')) {
+        // 同じ丸をもう一度タップ → 閉じる
+        popup.classList.remove('visible');
+        circle.classList.remove('active');
+        activeCircle = null;
+      } else {
+        showPopup({ clientX: t.clientX, clientY: t.clientY }, areaData, circle);
+      }
+    }, { passive: false });
+
+    svg.appendChild(circle);
+  });
+
+  // --- 丸やポップアップの外側をタップ／クリックしたら閉じる ---
+  function closeIfOutside(e) {
+    if (!popup.classList.contains('visible')) return;
+    if (popup.contains(e.target)) return;                 // ポップアップ内（動物リンク）は閉じない
+    if (e.target.closest && e.target.closest('circle')) return; // 丸の上は各ハンドラにまかせる
+    popup.classList.remove('visible');
+    if (activeCircle) {
+      activeCircle.classList.remove('active');
+      activeCircle = null;
+    }
+  }
+  document.addEventListener('touchstart', closeIfOutside, { passive: true });
+  document.addEventListener('click', closeIfOutside);
+</script>
+
+<script>
+  // =======================================
+  // どうぶつ一覧 ページ送り機能
+  // =======================================
+
+  const animalCards = [
+    // ===== 哺乳類：有袋目 =====
+    { slug: "クロカンガルー", img: "picture/クロカンガルー.jpg", name: "クロカンガルー", desc: "<ruby>夜<rt>よる</rt></ruby>にかつどうする、ジャンプ<ruby>力<rt>ちから</rt></ruby>がすごいカンガルー" },
+    { slug: "オオカンガルー", img: "picture/オオカンガルー.jpg", name: "オオカンガルー", desc: "べつめいハイイロカンガルー、むれでくらすおおがたカンガルー" },
+    // ===== 哺乳類：霊長目 =====
+    { slug: "ワオキツネザル", img: "picture/ワオキツネザル.jpg", name: "ワオキツネザル", desc: "<ruby>長<rt>なが</rt></ruby>いしっぽを<ruby>立<rt>た</rt></ruby>てて<ruby>歩<rt>ある</rt></ruby>くマダガスカルのサル" },
+    { slug: "クロキツネザル", img: "picture/クロキツネザル.jpg", name: "クロキツネザル", desc: "オスはまっ<ruby>黒<rt>くろ</rt></ruby>、メスはくりいろの<ruby>毛色<rt>けいろ</rt></ruby>がちがうサル" },
+    { slug: "コモンリスザル", img: "picture/コモンリスザル.jpg", name: "コモンリスザル", desc: "リスににた<ruby>見<rt>み</rt></ruby>た<ruby>目<rt>め</rt></ruby>の<ruby>小<rt>ちい</rt></ruby>さなサル" },
+    { slug: "フサオマキザル", img: "picture/フサオマキザル.jpg", name: "フサオマキザル", desc: "どうぐを<ruby>上手<rt>じょうず</rt></ruby>につかう、おりこうなサル" },
+    { slug: "ジェフロイクモザル", img: "picture/ジェフロイクモザル.jpg", name: "ジェフロイクモザル", desc: "クモのようにえだにぶら<ruby>下<rt>した</rt></ruby>がるサル" },
+    { slug: "ブラウンケナガクモザル", img: "picture/ブラウンケナガクモザル.jpg", name: "ブラウンケナガクモザル", desc: "<ruby>長<rt>なが</rt></ruby>い<ruby>手足<rt>てあし</rt></ruby>とおで<ruby>木<rt>き</rt></ruby>から<ruby>木<rt>き</rt></ruby>へいどうするサル" },
+    { slug: "アカテタマリン", img: "picture/アカテタマリン.jpg", name: "アカテタマリン", desc: "お<ruby>父<rt>ちち</rt></ruby>さんがこそだてをするサル" },
+    { slug: "ワタボウシタマリン", img: "picture/ワタボウシタマリン.jpg", name: "ワタボウシタマリン", desc: "<ruby>頭<rt>とう</rt></ruby>の<ruby>白<rt>しろ</rt></ruby>い<ruby>毛<rt>け</rt></ruby>がわたのぼうしみたいなサル" },
+    { slug: "ゴールデンライオンタマリン", img: "picture/ゴールデンライオンタマリン.jpg", name: "ゴールデンライオンタマリン", desc: "<ruby>日本<rt>にほん</rt></ruby>ではここだけで<ruby>見<rt>み</rt></ruby>られる<ruby>金色<rt>きんいろ</rt></ruby>のサル" },
+    { slug: "コモンマーモセット", img: "picture/コモンマーモセット.jpg", name: "コモンマーモセット", desc: "<ruby>耳<rt>みみ</rt></ruby>がふさふさの<ruby>毛<rt>け</rt></ruby>でおおわれた<ruby>小<rt>ちい</rt></ruby>さなサル" },
+    { slug: "クロミミマーモセット", img: "picture/クロミミマーモセット.jpg", name: "クロミミマーモセット", desc: "<ruby>耳<rt>みみ</rt></ruby>の<ruby>毛<rt>け</rt></ruby>が<ruby>黒<rt>くろ</rt></ruby>い、<ruby>小鳥<rt>ことり</rt></ruby>のような<ruby>声<rt>こえ</rt></ruby>で<ruby>鳴<rt>な</rt></ruby>くサル" },
+    { slug: "ニホンザル", img: "picture/ニホンザル.jpg", name: "ニホンザル", desc: "モンキー‼" },
+    { slug: "クロザル", img: "picture/クロザル.jpg", name: "クロザル", desc: "スラウェシしまにくらすまっ<ruby>黒<rt>くろ</rt></ruby>なサル" },
+    { slug: "シシオザル", img: "picture/シシオザル.jpg", name: "シシオザル", desc: "ライオンのようなたてがみをもつサル" },
+    { slug: "ドグエラヒヒ", img: "picture/ドグエラヒヒ.jpg", name: "ドグエラヒヒ", desc: "<ruby>大<rt>おお</rt></ruby>きなむれでくらすアフリカのヒヒ" },
+    { slug: "マンドリル", img: "picture/マンドリル.jpg", name: "マンドリル", desc: "はなに<ruby>赤<rt>あか</rt></ruby>と<ruby>青<rt>あお</rt></ruby>のもようがあるサル" },
+    { slug: "アビシニアコロブス", img: "picture/アビシニアコロブス.jpg", name: "アビシニアコロブス", desc: "<ruby>手<rt>て</rt></ruby>のおやゆびがない、めずらしいサル" },
+    { slug: "フランソワルトン", img: "picture/フランソワルトン.jpg", name: "フランソワルトン", desc: "まっ<ruby>黒<rt>くろ</rt></ruby>な<ruby>体<rt>からだ</rt></ruby>に<ruby>白<rt>しろ</rt></ruby>いほおひげのサル" },
+    { slug: "アジルテナガザル", img: "picture/アジルテナガザル.jpg", name: "アジルテナガザル", desc: "<ruby>長<rt>なが</rt></ruby>いうでで<ruby>木<rt>き</rt></ruby>から<ruby>木<rt>き</rt></ruby>へいどうするテナガザル" },
+    { slug: "スマトラオランウータン", img: "picture/スマトラオランウータン.jpg", name: "スマトラオランウータン", desc: "「<ruby>森<rt>もり</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>」といういみの<ruby>名前<rt>なまえ</rt></ruby>をもつおおがたのサル" },
+    { slug: "チンパンジー", img: "picture/チンパンジー.jpg", name: "チンパンジー", desc: "ちのうが<ruby>高<rt>たか</rt></ruby>くものおぼえのいいサル" },
+    { slug: "ニシゴリラ", img: "picture/ニシゴリラ.jpg", name: "ニシゴリラ", desc: "れいちょうるいでいちばん<ruby>大<rt>おお</rt></ruby>きな<ruby>体<rt>からだ</rt></ruby>をもつどうぶつ" },
+    { slug: "ヒゲサキ", img: "picture/ヒゲサキ.jpg", name: "ヒゲサキ", desc: "<ruby>日本<rt>にほん</rt></ruby>では<ruby>数<rt>すう</rt></ruby>かしょでしか<ruby>見<rt>み</rt></ruby>られないめずらしいサル" },
+    // ===== 哺乳類：ウサギ目・齧歯目・ハリネズミ目 =====
+    { slug: "カイウサギ", img: "picture/カイウサギ.jpg", name: "カイウサギ", desc: "150しゅるいくらいのひんしゅがいるかちくかされたウサギ" },
+    { slug: "アメリカビーバー", img: "picture/アメリカビーバー.jpg", name: "アメリカビーバー", desc: "<ruby>木<rt>き</rt></ruby>をかじってダムをつくるどうぶつ" },
+    { slug: "アフリカタテガミヤマアラシ", img: "picture/アフリカタテガミヤマアラシ.jpg", name: "アフリカタテガミヤマアラシ", desc: "かたいはりげでみをまもるどうぶつ" },
+    { slug: "カナダヤマアラシ", img: "picture/カナダヤマアラシ.jpg", name: "カナダヤマアラシ", desc: "3<ruby>万本<rt>まんぼん</rt></ruby>ものはりげをもつおおがたのねずみのなかま" },
+    { slug: "カピバラ", img: "picture/カピバラ.jpg", name: "カピバラ", desc: "おんせんがすきなさいだいきゅうのげっしるい" },
+    { slug: "モルモット", img: "picture/モルモット.jpg", name: "モルモット", desc: "たまにふれあいたいけんやってるよ❣" },
+    { slug: "チンチラ", img: "picture/チンチラ.jpg", name: "チンチラ", desc: "ふわふわのけがわをもつ<ruby>長生<rt>ながい</rt></ruby>きなどうぶつ" },
+    { slug: "ヨツユビハリネズミ", img: "picture/ヨツユビハリネズミ.jpg", name: "ヨツユビハリネズミ", desc: "<ruby>夜<rt>よる</rt></ruby>にひとりでこうどうする<ruby>小<rt>ちい</rt></ruby>さなハリネズミ" },
+    // ===== 哺乳類：食肉目 =====
+    { slug: "ホッキョクグマ", img: "picture/ホッキョクグマ.jpg", name: "ホッキョクグマ", desc: "ちじょうさいだいのにくしょくどうぶつ、およぎがとくい" },
+    { slug: "ツキノワグマ", img: "picture/ツキノワグマ.jpg", name: "ツキノワグマ", desc: "むねに<ruby>月<rt>つき</rt></ruby>のわもようがあるクマ" },
+    { slug: "ヒグマ", img: "picture/ヒグマ.jpg", name: "ヒグマ", desc: "デカいビッグなベアー" },
+    { slug: "レッサーパンダ", img: "picture/レッサーパンダ.jpg", name: "レッサーパンダ", desc: "<ruby>前足<rt>まえあし</rt></ruby>のだい6のゆびでものをつかむどうぶつ" },
+    { slug: "コツメカワウソ", img: "picture/コツメカワウソ.jpg", name: "コツメカワウソ", desc: "<ruby>水中<rt>すいちゅう</rt></ruby>をじざいにおよぐなかよしふうふのカワウソ" },
+    { slug: "ミーアキャット", img: "picture/ミーアキャット.jpg", name: "ミーアキャット", desc: "さばくにすをつくり、むれですむ" },
+    { slug: "アムールトラ", img: "picture/アムールトラ.jpg", name: "アムールトラ", desc: "ネコ<ruby>科<rt>か</rt></ruby>でいちばん<ruby>大<rt>おお</rt></ruby>きいトラ" },
+    { slug: "ヒョウ（クロヒョウ）", img: "picture/ヒョウ（クロヒョウ）.jpg", name: "ヒョウ（クロヒョウ）", desc: "<ruby>黒<rt>くろ</rt></ruby>い<ruby>毛色<rt>けいろ</rt></ruby>をしたヒョウのなかま" },
+    { slug: "ライオン", img: "picture/ライオン.jpg", name: "ライオン", desc: "むれでくらすネコ<ruby>科<rt>か</rt></ruby>のどうぶつ" },
+    { slug: "リカオン", img: "picture/リカオン.jpg", name: "リカオン", desc: "「アフリカのしゅりょうけん」とよばれるイヌ<ruby>科<rt>か</rt></ruby>のどうぶつ" },
+    // ===== 哺乳類：奇蹄目・偶蹄目 =====
+    { slug: "ウマ（ポニー）", img: "picture/ウマ（ポニー）.jpg", name: "ウマ（ポニー）", desc: "<ruby>小<rt>ちい</rt></ruby>さくて<ruby>頭<rt>あたま</rt></ruby>のいい<ruby>馬<rt>うま</rt></ruby>" },
+    { slug: "ウマ（ミニチュアホース）", img: "picture/ウマ（ミニチュアホース）.jpg", name: "ウマ（ミニチュアホース）", desc: "おおがたけんくらいの<ruby>大<rt>おお</rt></ruby>きさのとても<ruby>小<rt>ちい</rt></ruby>さな<ruby>馬<rt>うま</rt></ruby>" },
+    { slug: "ロバ", img: "picture/ロバ.jpg", name: "ロバ", desc: "<ruby>体<rt>からだ</rt></ruby>は<ruby>小<rt>ちい</rt></ruby>さいけれど<ruby>力<rt>ちから</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>いどうぶつ" },
+    { slug: "シマウマ", img: "picture/シマウマ.jpg", name: "シマウマ", desc: "サバンナにすむウマ" },
+    { slug: "ホンシュウジカ", img: "picture/ホンシュウジカ.jpg", name: "ホンシュウジカ", desc: "オスの<ruby>角<rt>つの</rt></ruby>が<ruby>年<rt>とし</rt></ruby>々<ruby>大<rt>おお</rt></ruby>きくなるシカ" },
+    { slug: "キリン", img: "picture/キリン.jpg", name: "キリン", desc: "りくのどうぶつでいちばんせが<ruby>高<rt>たか</rt></ruby>いどうぶつ" },
+    { slug: "アメリカバイソン", img: "picture/アメリカバイソン.jpg", name: "アメリカバイソン", desc: "どろの<ruby>中<rt>なか</rt></ruby>をごろごろころがるウシのなかま" },
+    { slug: "ヤギ", img: "picture/ヤギ.jpg", name: "ヤギ", desc: "あごひげがとくちょうのかちくどうぶつ" },
+    { slug: "ヒツジ", img: "picture/ヒツジ.jpg", name: "ヒツジ", desc: "むれをつくってくらす<ruby>毛<rt>け</rt></ruby>がふわふわのどうぶつ" },
+    // ===== 鳥類 =====
+    { slug: "ダチョウ", img: "picture/ダチョウ.jpg", name: "ダチョウ", desc: "せかいさいだい、とべないけど<ruby>走<rt>はし</rt></ruby>るのがはやい<ruby>鳥<rt>とり</rt></ruby>" },
+    { slug: "フンボルトペンギン", img: "picture/フンボルトペンギン.jpg", name: "フンボルトペンギン", desc: "にっこうよくがすきなペンギン" },
+    { slug: "ショウジョウトキ", img: "picture/ショウジョウトキ.jpg", name: "ショウジョウトキ", desc: "あざやかな<ruby>色<rt>いろ</rt></ruby>の<ruby>羽<rt>はね</rt></ruby>をもつトキ" },
+    { slug: "シロトキ", img: "picture/シロトキ.jpg", name: "シロトキ", desc: "<ruby>大<rt>おお</rt></ruby>きなむれでくらす<ruby>白<rt>しろ</rt></ruby>いトキ" },
+    { slug: "アフリカクロトキ", img: "picture/アフリカクロトキ.jpg", name: "アフリカクロトキ", desc: "コウノトリるいといっしょにむれをつくるトキ" },
+    { slug: "ベニイロフラミンゴ", img: "picture/ベニイロフラミンゴ.jpg", name: "ベニイロフラミンゴ", desc: "よねづけんしの<ruby>歌<rt>うた</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>にもなっている<ruby>鳥<rt>とり</rt></ruby>" },
+    { slug: "チリーフラミンゴ", img: "picture/チリーフラミンゴ.jpg", name: "チリーフラミンゴ", desc: "あしのいちぶが<ruby>赤<rt>あか</rt></ruby>い、あわいピンク<ruby>色<rt>いろ</rt></ruby>のフラミンゴ" },
+    { slug: "マガン", img: "picture/マガン.jpg", name: "マガン", desc: "たいれつを<ruby>組<rt>く</rt></ruby>んでとぶわたり<ruby>鳥<rt>とり</rt></ruby>" },
+    { slug: "マガモ", img: "picture/マガモ.jpg", name: "マガモ", desc: "アヒルの<ruby>元<rt>げん</rt></ruby>になったカモ" },
+    { slug: "カルガモ", img: "picture/カルガモ.jpg", name: "カルガモ", desc: "<ruby>日本<rt>にほん</rt></ruby>でもよく<ruby>見<rt>み</rt></ruby>かけるみぢかなカモ" },
+    { slug: "ツクシガモ", img: "picture/ツクシガモ.jpg", name: "ツクシガモ", desc: "<ruby>赤<rt>あか</rt></ruby>いくちばしがとくちょうのカモ" },
+    { slug: "ヒドリガモ", img: "picture/ヒドリガモ.jpg", name: "ヒドリガモ", desc: "<ruby>冬鳥<rt>ふゆどり</rt></ruby>として<ruby>日本<rt>にほん</rt></ruby>へやってくるカモ" },
+    { slug: "ホシハジロ", img: "picture/ホシハジロ.jpg", name: "ホシハジロ", desc: "<ruby>水草<rt>みずくさ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>にすをつくるカモ" },
+    { slug: "ヒメコンドル", img: "picture/ヒメコンドル.jpg", name: "ヒメコンドル", desc: "においで<ruby>食<rt>た</rt></ruby>べものを<ruby>見<rt>み</rt></ruby>つけるコンドル" },
+    { slug: "アンデスコンドル", img: "picture/アンデスコンドル.jpg", name: "アンデスコンドル", desc: "しりょくをたよりにエサをさがす<ruby>大<rt>おお</rt></ruby>きな<ruby>鳥<rt>とり</rt></ruby>" },
+    { slug: "オジロワシ", img: "picture/オジロワシ.jpg", name: "オジロワシ", desc: "かいがんのがんぺきにくらすワシ" },
+    { slug: "ハクトウワシ", img: "picture/ハクトウワシ.jpg", name: "ハクトウワシ", desc: "ソフトバンクホークス" },
+    { slug: "オオワシ", img: "picture/オオワシ.jpg", name: "オオワシ", desc: "<ruby>冬<rt>ふゆ</rt></ruby>に<ruby>少<rt>すく</rt></ruby>し<ruby>南<rt>みなみ</rt></ruby>へいどうする<ruby>大<rt>おお</rt></ruby>きなワシ" },
+    { slug: "パラワンコクジャク", img: "picture/パラワンコクジャク.jpg", name: "パラワンコクジャク", desc: "クジャクのなかまでとくにうつくしい<ruby>色<rt>いろ</rt></ruby>の<ruby>鳥<rt>とり</rt></ruby>" },
+    { slug: "マクジャク", img: "picture/マクジャク.jpg", name: "マクジャク", desc: "<ruby>頭<rt>とう</rt></ruby>にたばのようなかんうがあるクジャク" },
+    { slug: "インドクジャク", img: "picture/インドクジャク.jpg", name: "インドクジャク", desc: "さいしょにかちくかされた<ruby>鳥<rt>とり</rt></ruby>のひとつ" },
+    { slug: "マナヅル", img: "picture/マナヅル.jpg", name: "マナヅル", desc: "<ruby>三角形<rt>さんかくけい</rt></ruby>のへんたいを<ruby>組<rt>く</rt></ruby>んでとぶツル" },
+    { slug: "ジュズカケバト", img: "picture/ジュズカケバト.jpg", name: "ジュズカケバト", desc: "おんわなせいかくのじょうぶなハト" },
+    { slug: "クジャクバト", img: "picture/クジャクバト.jpg", name: "クジャクバト", desc: "おばねがおうぎのように<ruby>広<rt>ひろ</rt></ruby>がるかんしょうようのハト" },
+    { slug: "メンフクロウ", img: "picture/メンフクロウ.jpg", name: "メンフクロウ", desc: "<ruby>白<rt>しろ</rt></ruby>いハートがたの<ruby>顔<rt>かお</rt></ruby>がとくちょうのフクロウ" },
+    { slug: "シロフクロウ", img: "picture/シロフクロウ.jpg", name: "シロフクロウ", desc: "オスとメスで<ruby>色<rt>いろ</rt></ruby>がちがうほっきょくけんのフクロウ" },
+    { slug: "ワシミミズク", img: "picture/ワシミミズク.jpg", name: "ワシミミズク", desc: "<ruby>耳<rt>みみ</rt></ruby>のような<ruby>羽<rt>はね</rt></ruby>をもつ<ruby>大<rt>おお</rt></ruby>きなフクロウ" },
+    { slug: "ルリコンゴウインコ", img: "picture/ルリコンゴウインコ.jpg", name: "ルリコンゴウインコ", desc: "あざやかな<ruby>青色<rt>あおいろ</rt></ruby>の<ruby>体<rt>からだ</rt></ruby>をもつインコ" },
+  ];
+
+  const PAGE_SIZE = 8; // 1ページ4種類×2行
+  const animalTrack = document.getElementById('animalTrack');
+  const animalDots = document.getElementById('animalDots');
+  const prevBtn = document.getElementById('animalPrevBtn');
+  const nextBtn = document.getElementById('animalNextBtn');
+  let currentPage = 0;
+  const totalPages = Math.ceil(animalCards.length / PAGE_SIZE);
+
+  function buildCardHTML(card) {
+    return `<a href="animal_info.html?name=${encodeURIComponent(card.slug)}" class="card"><img src="${card.img}" alt="${card.name}"><div class="card-content"><h3>${card.name}</h3><p>${card.desc}</p></div></a>`;
+  }
+
+  animalTrack.addEventListener('click', (e) => {
+    if (e.target.closest('.card')) {
+      try { sessionStorage.setItem('animalPagerPage', currentPage); } catch (e) {}
+    }
+  });
+
+  function renderAnimalPages() {
+    animalTrack.innerHTML = '';
+    animalDots.innerHTML = '';
+
+    for (let p = 0; p < totalPages; p++) {
+      const pageDiv = document.createElement('div');
+      pageDiv.className = 'pager-page';
+
+      const start = p * PAGE_SIZE;
+      const pageCards = animalCards.slice(start, start + PAGE_SIZE);
+      pageDiv.innerHTML = pageCards.map(buildCardHTML).join('');
+
+      // 余ったマスを埋めるダミー要素（カードが伸びて崩れるのを防ぐ）
+      const remainder = PAGE_SIZE - pageCards.length;
+      for (let i = 0; i < remainder; i++) {
+        const filler = document.createElement('div');
+        filler.className = 'pager-filler';
+        filler.setAttribute('aria-hidden', 'true');
+        pageDiv.appendChild(filler);
+      }
+
+      animalTrack.appendChild(pageDiv);
+
+      const dot = document.createElement('button');
+      dot.className = 'pager-dot';
+      dot.setAttribute('aria-label', `${p + 1}ページ目`);
+      dot.addEventListener('click', () => goToPage(p));
+      animalDots.appendChild(dot);
+    }
+
+    updateAnimalPagerView();
+  }
+
+  function updateAnimalPagerView() {
+    animalTrack.style.transform = `translateX(-${currentPage * 100}%)`;
+
+    const pages = animalTrack.querySelectorAll('.pager-page');
+    pages.forEach((page, i) => {
+      page.style.visibility = (i === currentPage) ? 'visible' : 'hidden';
+    });
+
+    const dots = animalDots.querySelectorAll('.pager-dot');
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentPage));
+
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = currentPage === totalPages - 1;
+  }
+
+  function goToPage(p) {
+      currentPage = Math.max(0, Math.min(totalPages - 1, p));
+      updateAnimalPagerView();
+      try { sessionStorage.setItem('animalPagerPage', currentPage); } catch (e) {}
+    }
+
+  prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
+  nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
+
+  (function restorePage(){
+    let saved = 0;
+    try { saved = parseInt(sessionStorage.getItem('animalPagerPage'), 10) || 0; } catch (e) {}
+    currentPage = Math.max(0, Math.min(totalPages - 1, saved));
+  })();
+
+  renderAnimalPages();
+
+  // 「もどる」でbfcacheから復帰した場合にも対応
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      let saved = 0;
+      try { saved = parseInt(sessionStorage.getItem('animalPagerPage'), 10) || 0; } catch (err) {}
+      goToPage(saved);
+    }
+  });
+</script>
+
+<script>
+  // =======================================
+  // イベント情報
+  // 出典: 浜松市動物園情報サイト わくわく！はまZOO
+  //       https://hamazoo.net/event.php
+  // ※ hamazoo.net のカレンダーから取得したイベントを反映しています。
+  //    最新情報の更新時はこの eventData を書き換えてください。
+  // =======================================
+
+  const eventData = [
+    // ---- 2026年7月 ----
+    { date: "7/5",  name: "レッサーパンダの日" },
+    { date: "7/11", name: "モルモットになつやさいのプレートをプレゼント" },
+    { date: "7/12", name: "アミメキリン「ルイ」の日" },
+    { date: "7/18", name: "サルのアパートにきせつのフルーツをプレゼント" },
+    { date: "7/19", name: "はっぽうスチロールの日" },
+    // ---- 2026年8月 ----
+    { date: "8/5",  name: "モルモットをかんさつしてみよう" },
+    { date: "8/7",  name: "ペンギンにさかなをあげてみよう" },
+    { date: "8/11", name: "どうぶつクイズラリー" },
+    { date: "8/14", name: "ペンギンにさかなをあげてみよう" },
+    { date: "8/16", name: "ニホンザルにつめたいおやつのプレゼント" },
+    { date: "8/19", name: "さるたちになつのみかくをプレゼント" },
+    { date: "8/21", name: "ペンギンにさかなをあげてみよう" },
+    { date: "8/28", name: "ペンギンにさかなをあげてみよう" },
+  ];
+
+  (function renderEvents() {
+    const tbody = document.getElementById('eventTableBody');
+    if (!tbody) return;
+
+    if (!eventData.length) return; // データが無ければ既定の内容を残す
+
+    tbody.innerHTML = eventData.map(ev => {
+      const d = document.createElement('td');
+      d.textContent = ev.date;
+      const n = document.createElement('td');
+      n.textContent = ev.name;
+      return `<tr>${d.outerHTML}${n.outerHTML}</tr>`;
+    }).join('');
+  })();
+</script>
+
+<script src="responsive.js"></script>
+
+</body>
+
+</html>

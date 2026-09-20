@@ -1,0 +1,228 @@
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:"Kiwi Maru","Yu Gothic",sans-serif;
+background:#FFF8E7;
+color:#333;
+line-height:1.6;
+}
+
+/* ==========================
+   ヘッダー（index.htmlと共通デザイン）
+========================== */
+
+header{
+background:#7BC96F;
+color:white;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:15px 50px;
+
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+line-height:1.1;
+text-decoration:none;
+}
+
+.logo-main{
+font-family:"Dela Gothic One","Yu Gothic",sans-serif;
+font-size:1.5rem;
+color:#FFF8E7;
+-webkit-text-stroke:1px #3E7A34;
+text-stroke:1px #3E7A34;
+paint-order:stroke fill;
+filter:drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+letter-spacing:0.02em;
+word-break:keep-all;
+}
+
+.logo-sub{
+margin-top:2px;
+font-family:'Darumadrop One',"Kiwi Maru","Yu Gothic",sans-serif;
+font-size:1.1rem;
+color:#FFCB2E;
+text-shadow:0 1px 2px rgba(0,0,0,0.25);
+letter-spacing:0.05em;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* ==========================
+   フッター（index.htmlと共通）
+========================== */
+
+footer{
+background:#7BC96F;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* ==========================
+   戻るリンク
+========================== */
+
+.back-link-wrap{
+padding:24px 10% 0;
+}
+
+.back-link{
+display:inline-flex;
+align-items:center;
+gap:6px;
+color:#4CAF50;
+text-decoration:none;
+font-weight:bold;
+font-size:0.95rem;
+}
+
+.back-link:hover{
+text-decoration:underline;
+}
+
+/* ==========================
+   どうぶつ詳細
+========================== */
+
+main{
+max-width:1000px;
+margin:0 auto;
+padding:30px 10% 80px;
+}
+
+.animal-detail{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:36px;
+align-items:start;
+margin-top:20px;
+}
+
+.animal-photo{
+width:100%;
+aspect-ratio:4/3;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,.1);
+background:#F1E9D2;
+}
+
+.animal-photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.animal-photo.is-placeholder{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:10px;
+border:2px dashed #D9C79E;
+color:#9C8B5E;
+font-size:0.9rem;
+text-align:center;
+padding:20px;
+}
+
+.animal-photo.is-placeholder .paw{
+font-size:2.2rem;
+}
+
+.animal-name{
+font-family:"Darumadrop One","Kiwi Maru","Yu Gothic",sans-serif;
+font-size:clamp(1.8rem,4vw,2.6rem);
+color:#4CAF50;
+margin-bottom:14px;
+}
+
+.animal-desc-card{
+background:white;
+border-radius:15px;
+padding:24px 26px;
+box-shadow:0 4px 10px rgba(0,0,0,.1);
+margin-bottom:20px;
+}
+
+.animal-desc-label{
+font-size:0.8rem;
+color:#9C8B5E;
+font-weight:bold;
+margin-bottom:8px;
+letter-spacing:0.05em;
+}
+
+.animal-desc-text{
+font-size:1rem;
+color:#555;
+}
+
+.animal-desc-text.is-placeholder{
+color:#B0A57E;
+font-style:italic;
+}
+
+.not-found{
+text-align:center;
+padding:60px 20px;
+}
+
+.not-found h1{
+font-family:"Darumadrop One","Kiwi Maru",sans-serif;
+color:#E76F51;
+margin-bottom:16px;
+font-size:1.8rem;
+}
+
+.not-found a{
+color:#4CAF50;
+font-weight:bold;
+}
+
+@media (max-width:760px){
+.animal-detail{
+  grid-template-columns:1fr;
+}
+header{
+  padding:15px 25px;
+}
+main{
+  padding:20px 6% 60px;
+}
+.back-link-wrap{
+  padding:20px 6% 0;
+}
+}
