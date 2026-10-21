@@ -240,20 +240,64 @@ a {
     }
 }
 
+/* ============================================================
+   スマホ：一覧カードを index と同じ
+   「写真メイン・なまえだけ・たて長2:3」のグリッドに
+   ============================================================ */
 @media (max-width: 600px) {
     .animal-list {
-        gap: 18px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0 12px;
     }
 
-    /* カードを画面幅に合わせてのばし、はみ出さないようにする */
-    .animal-list .animal-card,
-    .VU div {
+    .animal-list .animal-card {
+        width: auto;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        aspect-ratio: 2 / 3;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .animal-list .animal-card a {
+        display: block;
         width: 100%;
-        max-width: 320px;
-        margin-bottom: 24px;
+        height: 100%;
     }
 
-    .animal-list img {
-        height: 190px;
+    .animal-list .animal-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    /* なまえは写真の下にうすい帯でのせる */
+    .animal-list .animal-card h2 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 14px 4px 5px;
+        font-size: 0.62rem;
+        line-height: 1.2;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+        background: linear-gradient(to top, rgba(0, 0, 0, .65), rgba(0, 0, 0, 0));
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 360px) {
+    .animal-list .animal-card h2 {
+        font-size: 0.55rem;
     }
 }
