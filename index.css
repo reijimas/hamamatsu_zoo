@@ -990,22 +990,80 @@ section{
 .card-content{
   padding:16px;
 }
-/* どうぶつ一覧のページ送りカードを、せまい画面では見やすく */
-.pager-page{
-  gap:14px;
-}
-.pager-page .card img{
-  height:110px;
-}
-.pager-page .card-content{
-  padding:12px 10px;
-}
-.animal-pager{
-  gap:8px;
-}
 th,td{
   padding:8px 6px;
   font-size:0.9rem;
+}
+}
+
+/* ==========================
+   「どうぶつえんでみれるどうぶつ」
+   スマホでは 1画面に収まるコンパクトなカードに
+   （なまえだけ・写真メイン・たて2:よこ3 ＝ たて長 2:3）
+========================== */
+@media (max-width:600px){
+
+/* 3列ならべ。1ページ8枚が 3+3+2 の3段でおさまる */
+.pager-page{
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.animal-pager{
+  gap:8px;
+}
+
+/* カードを「たて:よこ = 3:2」のたて長にして、写真をいっぱいに */
+.pager-page .card{
+  position:relative;
+  aspect-ratio:2 / 3;
+  height:auto;
+  border-radius:12px;
+}
+
+.pager-page .card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* せつめい文はスマホでは出さない（なまえだけ） */
+.pager-page .card-content p{
+  display:none;
+}
+
+/* なまえは写真の下にうすい帯でのせる */
+.pager-page .card-content{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:14px 4px 4px;
+  background:linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,0));
+}
+
+.pager-page .card-content h3{
+  margin:0;
+  color:#fff;
+  font-size:0.62rem;
+  line-height:1.2;
+  text-align:center;
+  text-shadow:0 1px 2px rgba(0,0,0,.6);
+  overflow-wrap:anywhere;   /* 長いなまえは折り返す（見切れ防止） */
+}
+
+/* ページ送りボタンは小さめに */
+.pager-btn{
+  width:34px;
+  height:34px;
+  font-size:1rem;
+}
+}
+
+/* ごく小さい画面でも破綻しないように文字をさらに微調整 */
+@media (max-width:360px){
+.pager-page .card-content h3{
+  font-size:0.55rem;
 }
 }
 
